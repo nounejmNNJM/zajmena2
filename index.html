@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, minimum-scale=1">
+    <title>Záchrana Zájmen</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Propojení s CSS -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Odkaz na favicon -->
+</head>
+
+<body>
+    <!-- Úvodní obrazovka -->
+    <div id="start-screen">
+        <h1>Záchrana Zájmen</h1>
+        <p class="description">
+            Sestřeluj UFO se zájmeny a zachraň je! Dávej si pozor, ať neztratíš všechny životy.
+            Bonusové hvězdy ti mohou přidat život navíc, pokud je trefíš!
+        </p>
+        <div class="rules">
+            <h2>Pravidla hry:</h2>
+            <ul>
+                <li><strong>Cíl hry:</strong> Sestřelit co nejvíce UFO se zájmeny.</li>
+                <li><strong>Pozor:</strong> Nenech UFO se zájmeny uniknout!</li>
+                <li><strong>Bonus:</strong> Střílej padající hvězdy, získáš život navíc.</li>
+            </ul>
+        </div>
+        <button id="start-button">Chci hrát!</button>
+    </div>
+
+    <!-- Canvas pro hru -->
+    <canvas id="gameCanvas" width="800" height="600" style="display: none; background: #000;"></canvas>
+
+    <!-- Ovládací tlačítka pro tablet -->
+    <div id="controls" style="display: none;">
+        <button id="left-button" aria-label="Pohyb vlevo">⬅️</button>
+        <button id="fire-button-left" aria-label="Střelba levým palcem">🔥</button>
+        <div class="spacer"></div> <!-- Mezera mezi střeleckými tlačítky -->
+        <button id="fire-button-right" aria-label="Střelba pravým palcem">🔥</button>
+        <button id="right-button" aria-label="Pohyb vpravo">➡️</button>
+    </div>
+
+    <!-- Propojení JavaScriptu -->
+    <script src="game.js"></script>
+    <script>
+        // Event listener pro tlačítko
+        document.getElementById("start-button").addEventListener("click", function() {
+            document.getElementById("start-screen").style.display = "none"; // Skryje úvodní obrazovku
+            initGame(); // Spustí hru
+        });
+    </script>
+</body>
+</html>

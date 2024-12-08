@@ -1,0 +1,125 @@
+/* Základní reset */
+body, h1, h2, p, ul, li, button, canvas {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #1a1a2e, #16213e);
+    color: #ffffff;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#start-screen {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.rules h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #66ff66;
+}
+
+.rules ul {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.rules li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.rules li strong {
+    color: #ffcc00;
+}
+
+#start-button {
+    background: #66ff66;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+#start-button:hover {
+    background: #00ff00;
+}
+
+#controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between; /* Rovnoměrné rozložení */
+    align-items: center; /* Zarovnání na střed */
+    width: 90%; /* Celková šířka ovládací oblasti */
+    gap: 10px; /* Menší mezery mezi tlačítky */
+}
+
+#controls button {
+    background: #333;
+    color: white;
+    font-size: 24px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1; /* Rovnoměrná šířka tlačítek */
+    text-align: center;
+}
+
+#controls button:active {
+    background: #555;
+}
+
+.spacer {
+    flex: 2; /* Vytvoří větší mezeru mezi střeleckými tlačítky */
+}
+
+canvas {
+    max-width: 100%; /* Plátno nepřekročí šířku rodiče */
+    height: auto;    /* Zachová poměr stran */
+    display: block;  /* Zarovná na střed */
+    margin: 0 auto;  /* Přidá centrování */
+    border: 2px solid #fff; /* Volitelně lze přidat rámeček pro lepší viditelnost */
+    background: #000; /* Černé pozadí */
+}
+
+body {
+    touch-action: manipulation; /* Zakáže double-tap zoom */
+    overscroll-behavior: none;  /* Zamezí nežádoucímu posouvání stránky při gesta */
+}
